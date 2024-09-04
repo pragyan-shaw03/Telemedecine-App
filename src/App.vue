@@ -1,26 +1,52 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <nav-component></nav-component>
+  <router-view></router-view>
+  <footer-component></footer-component>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapActions } from 'vuex';
+
+import FooterComponent from './components/FooterComponent.vue';
+import NavComponent from './components/Navigation/NavComponent.vue';
 
 export default {
-  name: 'App',
+  
+  data() {
+    return {
+      widthSize: window.innerWidth,
+    }
+  },
+
   components: {
-    HelloWorld
+    NavComponent,
+    FooterComponent
+  },
+
+  watch: {
+    widthSize(newValue) {
+      if (newValue > 600) {
+        this.updateDesktopView(true);
+      } else {
+        this.updateDesktopView(false);
+      }
+    },
+  },
+
+  beforeMount() {
+    window.addEventListener('resize', () => {
+      this.widthSize = window.innerWidth;
+    });
+  },
+
+  methods: {
+    ...mapActions(['updateDesktopView']),
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  padding-top: 56px;
 }
 </style>
