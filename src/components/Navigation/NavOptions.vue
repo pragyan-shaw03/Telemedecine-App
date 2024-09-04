@@ -34,6 +34,6 @@ export default {
 }
 .nav-item:hover {
   transform: scale(1, 1.1);
-  box-shadow: 2px 2px 8px black;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.577) !important;
 }
 </style>

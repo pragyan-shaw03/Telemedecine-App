@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container bg-light">
     <h2 class="text-center mb-4">People Reviews</h2>
     <div class="row">
       <div v-for="(review, i) in reviews" :key="i" class="col-md-4">

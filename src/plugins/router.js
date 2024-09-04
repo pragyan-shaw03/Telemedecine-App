@@ -24,7 +24,7 @@ const routes = [
     },
     {
         path: '/doctors',
-        name: 'DoctorApp',
+        name: 'Doctors',
         component: DoctorApp,
         children: [
             {
