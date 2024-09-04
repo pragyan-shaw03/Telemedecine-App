@@ -16,7 +16,7 @@
                 <strong>Clinic:</strong> {{ doctor.clinicInfo }}<br />
                 <strong>Address:</strong> {{ doctor.address }}
               </p>
-              <a href="#" class="btn btn-primary">Book Appointment</a>
+              <router-link to="/" class="btn btn-primary">Book Appointment</router-link>
             </div>
           </div>
         </div>

@@ -8,7 +8,7 @@
       <p class="card-text">
         With supporting text below as a natural lead-in to additional content.
       </p>
-      <a href="#" class="btn btn-primary" @click="this.$router.push({ name: 'DoctorInfo', params: { id: this.id } })">More Info...</a>
+      <router-link :to="{ name: 'DoctorInfo', params: { id: this.id } }" class="btn btn-primary">More Info...</router-link>
     </div>
     <div class="card-footer text-body-secondary">
     Expertise

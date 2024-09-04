@@ -12,7 +12,8 @@
 export default {
     data() {
         return {
-            options: [{name: 'Home', route: '/', icon: 'fa-solid fa-house me-2 text-muted'},
+            options: [
+              {name: 'Home', route: '/', icon: 'fa-solid fa-house me-2 text-muted'},
               {name: 'Doctors', route: '/doctors', icon: 'fa-solid fa-user-doctor me-2 text-muted'},
               {name: 'My Appointments', route: '/', icon: 'fa-solid fa-calendar-check me-2 text-muted'}, 
               {name: 'Medical History', route: '/', icon: 'fa-solid fa-book-medical me-2 text-muted'}, 
