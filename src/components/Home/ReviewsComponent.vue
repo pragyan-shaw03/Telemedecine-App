@@ -1,22 +1,30 @@
 <template>
-  <div class="container bg-light">
-    <h2 class="text-center mb-4">People Reviews</h2>
-    <div class="row">
-      <div v-for="(review, i) in reviews" :key="i" class="col-md-4">
-        <div class="card shadow-sm mb-4">
-          <div class="card-body text-center shadow">
+  <div class="container mx-auto px-4 py-12">
+    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">
+      People Reviews
+    </h2>
+    <div class="flex flex-wrap -mx-4">
+      <div
+        v-for="(review, i) in reviews"
+        :key="i"
+        class="w-full md:w-1/3 px-4 mb-8"
+      >
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
+          <div class="p-6 text-center">
             <img
               :src="review.imageURL"
-              class="rounded-circle mb-3"
+              class="w-24 h-24 object-cover rounded-full mx-auto mb-4 border-2 border-blue-500"
               alt="Reviewer Image"
             />
-            <h5 class="card-title">{{ review.name }}</h5>
-            <div class="mb-3">
-              <span class="text-warning"
-                >&#9733;&#9733;&#9733;&#9733;&#9734;</span
-              >
+            <h5 class="text-xl font-semibold text-gray-800 mb-2">
+              {{ review.name }}
+            </h5>
+            <div class="mb-4">
+              <span class="text-yellow-500">
+                &#9733;&#9733;&#9733;&#9733;&#9734;
+              </span>
             </div>
-            <p class="card-text">
+            <p class="text-gray-600">
               {{ review.description }}
             </p>
           </div>
@@ -43,7 +51,7 @@ export default {
             "https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1000&h=100&dpr=1",
           name: "Alice Johnson",
           description:
-            '"Fantastic experience! The team went above and beyond my expectations."',
+            '"Fantastic experience! The team went above and beyond my expectations. I would recommend it to everyone."',
         },
         {
           imageURL:

@@ -1,17 +1,17 @@
 <template>
-  <div class="container text-center bg-light">
-    <h2 class="mb-4">Our Services</h2>
-    <div class="row justify-content-center">
+  <div class="container mx-auto px-4 py-12 bg-gray-100">
+    <h2 class="text-4xl font-extrabold text-gray-900 mb-8 text-center">Our Services</h2>
+    <div class="flex flex-wrap justify-center gap-8">
       <div
         v-for="(service, i) in services"
         :key="i"
-        class="col-md-3 shadow m-3"
+        class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4 bg-white shadow-lg rounded-lg transition-transform transform hover:scale-105 hover:shadow-2xl"
       >
-        <div class="services-icon mb-3">
-          <i :class="service.icon"></i>
+        <div class="flex items-center justify-center mb-4 p-6 bg-blue-50 rounded-full">
+          <i :class="service.icon" class="text-3xl text-blue-500"></i>
         </div>
-        <h4>{{ service.title }}</h4>
-        <p>{{ service.description }}</p>
+        <h4 class="text-2xl font-semibold text-gray-800 mb-2">{{ service.title }}</h4>
+        <p class="text-gray-600">{{ service.description }}</p>
       </div>
     </div>
   </div>

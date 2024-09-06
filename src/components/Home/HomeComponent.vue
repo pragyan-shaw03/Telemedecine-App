@@ -1,43 +1,61 @@
 <template>
-  <search-component></search-component>
-  <div class="p-5">
-    <section class="hero-section text-center shadow rounded p-2">
-      <div class="container">
-        <h1 class="display-4">Find the Best Doctors Near You</h1>
-        <p class="lead">
-          Connect with top doctors and healthcare professionals for your needs.
-        </p>
-        <a href="" class="btn btn-primary btn-lg">Book an Appointment</a>
-      </div>
-    </section>
-    
+  <div class="min-h-screen bg-gray-100">
+    <search-component></search-component>
 
-    <hr class="my-5" />
-    <!-- Services Section -->
-    <services-component></services-component>
+    <div class="p-6 md:p-8 lg:p-12">
+      <!-- Find Doctors Section -->
+      <section class="bg-gradient-to-r from-blue-50 to-blue-100 text-center py-16 px-6 md:px-12 lg:px-24 rounded-lg shadow-xl">
+        <div class="container mx-auto">
+          <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+            Find the Best Doctors Near You
+          </h1>
+          <p class="text-lg md:text-xl text-gray-700 mb-8">
+            Connect with top doctors and healthcare professionals for your needs.
+          </p>
+          <a
+            href="#"
+            class="inline-block bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
+          >
+            Book an Appointment
+          </a>
+        </div>
+      </section>
 
-    <hr class="my-5" />
-    <!-- Call to Action Banner -->
-    <section class="cta-banner text-center py-5 bg-primary text-white shadow-lg">
-      <div class="container">
-        <h2 class="fw-bold">Ready to Take Control of Your Health?</h2>
-        <p class="mb-4">Book your appointment today and get the care you deserve.</p>
-        <a href="/doctors" class="btn btn-light btn-lg">Search Doctors</a>
-      </div>
-    </section>
+      <!-- Services Section -->
+      <hr class="my-10 border-gray-500" />
+      <services-component></services-component>
 
-    <hr class="my-5" />
-    <!-- Featured Doctors -->
-    <featured-doctors></featured-doctors>
+      <!-- Call to Action Banner -->
+      <hr class="my-10 border-gray-500" />
+      <section class="bg-blue-700 text-white py-12 px-6 text-center rounded-lg shadow-lg">
+        <div class="container mx-auto">
+          <h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+            Ready to Take Control of Your Health?
+          </h2>
+          <p class="text-lg md:text-xl mb-6">
+            Book your appointment today and get the care you deserve.
+          </p>
+          <a
+            href="/doctors"
+            class="inline-block bg-white text-blue-700 font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-gray-100 transition duration-300"
+          >
+            Search Doctors
+          </a>
+        </div>
+      </section>
 
-    <hr class="my-5" />
-    <!-- Health Articles -->
-    <health-articles></health-articles>
+      <!-- Featured Doctors Section -->
+      <hr class="my-10 border-gray-500" />
+      <featured-doctors></featured-doctors>
 
-    <hr class="my-5" />
-    <!-- Reviews -->
-     <reviews-component></reviews-component>
-    
+      <!-- Health Articles Section -->
+      <hr class="my-10 border-gray-500" />
+      <health-articles></health-articles>
+
+      <!-- Reviews Section -->
+      <hr class="my-10 border-gray-500" />
+      <reviews-component></reviews-component>
+    </div>
   </div>
 </template>
 
@@ -54,7 +72,7 @@ export default {
     SearchComponent,
     ReviewsComponent,
     FeaturedDoctors,
-    HealthArticles
+    HealthArticles,
   },
 };
 </script>

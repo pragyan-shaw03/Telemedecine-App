@@ -1,82 +1,29 @@
 <template>
   <!-- Featured Doctors -->
-  <section class="featured-doctors py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">Top Doctors</h2>
-      <div class="row justify-content-center">
-        <div class="col-md-3 mb-3">
-          <div class="card shadow" style="max-width: 250px">
+  <section class="py-12 bg-gray-100">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-extrabold text-gray-800 mb-8 text-center">Top Doctors</h2>
+      <div class="flex flex-wrap justify-center gap-6">
+        <div
+          v-for="doctor in doctors"
+          :key="doctor.id"
+          class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4"
+        >
+          <div class="bg-white shadow-lg rounded-lg overflow-hidden transform transition-transform duration-300 hover:scale-105">
             <img
-              src="https://via.placeholder.com/100"
-              class="card-img-top mx-auto mt-3"
+              :src="doctor.image"
               alt="Doctor Image"
-              style="width: 100px; height: 100px; border-radius: 50%"
+              class="w-24 h-24 mx-auto mt-6 rounded-full border border-gray-200"
             />
-            <div class="card-body text-center">
-              <h6 class="card-title">Dr. John Doe</h6>
-              <p class="card-text text-muted">Cardiologist</p>
+            <div class="p-6 text-center">
+              <h6 class="text-xl font-semibold text-gray-900 mb-2">{{ doctor.name }}</h6>
+              <p class="text-gray-600 mb-4">{{ doctor.specialty }}</p>
               <router-link
-                :to="{ name: 'DoctorInfo', params: { id: 1 } }"
-                class="btn btn-sm btn-primary"
-                >Book Appointment</router-link
+                :to="{ name: 'DoctorInfo', params: { id: doctor.id } }"
+                class="inline-block px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-blue-600 transition duration-300"
               >
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card shadow" style="max-width: 250px">
-            <img
-              src="https://via.placeholder.com/100"
-              class="card-img-top mx-auto mt-3"
-              alt="Doctor Image"
-              style="width: 100px; height: 100px; border-radius: 50%"
-            />
-            <div class="card-body text-center">
-              <h6 class="card-title">Dr. Jane Smith</h6>
-              <p class="card-text text-muted">Dermatologist</p>
-              <router-link
-                :to="{ name: 'DoctorInfo', params: { id: 2 } }"
-                class="btn btn-sm btn-primary"
-                >Book Appointment</router-link
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card shadow" style="max-width: 250px">
-            <img
-              src="https://via.placeholder.com/100"
-              class="card-img-top mx-auto mt-3"
-              alt="Doctor Image"
-              style="width: 100px; height: 100px; border-radius: 50%"
-            />
-            <div class="card-body text-center">
-              <h6 class="card-title">Dr. Emily White</h6>
-              <p class="card-text text-muted">Pediatrician</p>
-              <router-link
-                :to="{ name: 'DoctorInfo', params: { id: 3 } }"
-                class="btn btn-sm btn-primary"
-                >Book Appointment</router-link
-              >
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 mb-3">
-          <div class="card shadow" style="max-width: 250px">
-            <img
-              src="https://via.placeholder.com/100"
-              class="card-img-top mx-auto mt-3"
-              alt="Doctor Image"
-              style="width: 100px; height: 100px; border-radius: 50%"
-            />
-            <div class="card-body text-center">
-              <h6 class="card-title">Dr. Emily White</h6>
-              <p class="card-text text-muted">Pediatrician</p>
-              <router-link
-                :to="{ name: 'DoctorInfo', params: { id: 3 } }"
-                class="btn btn-sm btn-primary"
-                >Book Appointment</router-link
-              >
+                Book Appointment
+              </router-link>
             </div>
           </div>
         </div>
@@ -85,13 +32,16 @@
   </section>
 </template>
 
-<style scoped>
-.featured-doctors .card {
-  border: none;
-  transition: transform 0.3s;
+<script>
+export default {
+  data() {
+    return {
+      doctors: [
+        { id: 1, name: 'Dr. John Doe', specialty: 'Cardiologist', image: 'https://via.placeholder.com/100' },
+        { id: 2, name: 'Dr. Jane Smith', specialty: 'Dermatologist', image: 'https://via.placeholder.com/100' },
+        { id: 3, name: 'Dr. Emily White', specialty: 'Pediatrician', image: 'https://via.placeholder.com/100' },
+      ]
+    };
+  }
 }
-
-.featured-doctors .card:hover {
-  transform: translateY(-10px);
-}
-</style>
+</script>
