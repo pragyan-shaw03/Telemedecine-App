@@ -15,6 +15,7 @@
           <a
             href="#"
             class="inline-block bg-blue-500 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:bg-blue-600 transition duration-300 ease-in-out"
+            @click="bookAppointment"
           >
             Book an Appointment
           </a>
@@ -74,5 +75,10 @@ export default {
     FeaturedDoctors,
     HealthArticles,
   },
+  methods: {
+    bookAppointment() {
+      this.$router.push({name: 'Doctors'});
+    }
+  }
 };
 </script>

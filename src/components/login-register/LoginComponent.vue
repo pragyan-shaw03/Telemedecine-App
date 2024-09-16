@@ -85,7 +85,11 @@ export default {
 
       if (!this.emailError && !this.passwordError) {
         // Perform login logic
-        console.log("Logging in with:", this.email, this.password);
+        this.$store.commit('login', {
+          name: this.email,
+          token: 'someVal'
+        })
+        this.$router.push('/');
       }
     },
   },

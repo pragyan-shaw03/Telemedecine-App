@@ -1,6 +1,6 @@
 <template>
   <div
-    class="offcanvas offcanvas-start bg-primary text-white"
+    class="offcanvas offcanvas-start bg-app-blue text-white"
     tabindex="-1"
     id="offcanvasExample"
     aria-labelledby="offcanvasExampleLabel"

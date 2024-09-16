@@ -3,7 +3,7 @@ import { createStore } from "vuex";
 const store = createStore({
     state() {
         return {
-            desktopView: true,
+            user: JSON.parse(localStorage.getItem('user')),
             doctors: [ {id: 0, name: 'Pragyan', imageUrl: 'https://via.placeholder.com/150',expertise: 'Cardiologist', clinicInfo: 'Heart Clinic, Downtown', address: '123 Heart Street, City, Country'},
                        {id: 1, name: 'Aman', imageUrl: 'https://via.placeholder.com/150',expertise: 'Cardiologist', clinicInfo: 'Heart Clinic, Downtown', address: '123 Heart Street, City, Country'},
                        {id: 2, name: 'Aastha', imageUrl: 'https://via.placeholder.com/150',expertise: 'Cardiologist', clinicInfo: 'Heart Clinic, Downtown', address: '123 Heart Street, City, Country'},
@@ -16,27 +16,26 @@ const store = createStore({
         }
     },
     mutations: {
-        updateDesktopView(state, value) {
-            state.desktopView = value;
-        },
         addDoctors(state, doctor) {
             state.doctors.push(doctor);
+        },
+        login(state, user) {
+            state.user = user;
+            localStorage.removeItem('user');
+            localStorage.setItem('user', JSON.stringify(state.user));
         }
     },
     actions: {
-        updateDesktopView(context, value) {
-            context.commit('updateDesktopView', value);
-        },
         addDoctors(context, doctor) {
             context.commit('addDoctors', doctor);
         }
     },
     getters: {
-        isDesktopView(state) {
-            return state.desktopView;
-        },
         getDoctors(state) {
             return state.doctors;
+        },
+        getUser(state) {
+            return state.user;
         }
     }
 })
